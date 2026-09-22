@@ -1,0 +1,21 @@
+# Terraform
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+crash.log
+crash.*.log
+*.tfvars
+!*.tfvars.example
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+*.zip
+# Note: .terraform.lock.hcl is intentionally NOT ignored -
+# commit it so everyone/CI resolves the same provider versions.
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
