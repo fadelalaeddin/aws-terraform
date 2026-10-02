@@ -50,21 +50,7 @@ losing a message quietly is not an option.
   the ALB's SG.
 - IMDSv2 is enforced (`http_tokens = "required"`) on every instance.
 
-## Repo layout
-
-.
-├── terraform/
-│   ├── main.tf                      # All resources (networking, compute, ASG, S3, Lambda, alarms)
-│   ├── variables.tf                 # Input variables with defaults and validation
-│   ├── outputs.tf                   # Useful outputs (ALB URL, bucket name, etc.)
-│   ├── versions.tf                  # Terraform + provider version pins
-│   ├── user_data.sh                 # EC2 bootstrap script (installs nginx, serves a health page)
-│   └── terraform.tfvars.example     # Copy to terraform.tfvars and customize
-├── lambda/
-│   └── handler.py                   # Lambda function source (zipped by Terraform at apply time)
-├── .gitignore
-└── README.md
-
+## PS
 
 Take a look at `allowed_http_cidr` before you apply. It defaults to
 `0.0.0.0/0`, which is fine for messing around but you'll want to tighten it
