@@ -79,29 +79,3 @@ variable "cpu_target_value" {
   type        = number
   default     = 50
 }
-
-
-# EVENT PIPELINE (SQS)
-
-
-variable "sqs_visibility_timeout_seconds" {
-  description = "SQS visibility timeout for the pipeline queue. AWS recommends at least 6x the Lambda function timeout (30s timeout -> 180s here) so a message isn't redelivered while still being processed."
-  type        = number
-  default     = 180
-}
-
-variable "sqs_max_receive_count" {
-  description = "Number of times a message may be received/fail before it is moved to the dead-letter queue."
-  type        = number
-  default     = 5
-}
-
-
-# STORAGE
-
-
-variable "s3_force_destroy" {
-  description = "If true, allows Terraform to delete the S3 bucket even if it still contains objects. Use with caution."
-  type        = bool
-  default     = false
-}
