@@ -1,8 +1,4 @@
-"""
-Processes S3 upload events delivered through SQS.
 
-Flow: S3 -> EventBridge -> SQS -> this Lambda (failures land in the DLQ).
-"""
 
 import json
 import logging
